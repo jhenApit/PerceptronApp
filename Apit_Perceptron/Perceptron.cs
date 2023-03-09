@@ -16,10 +16,11 @@ namespace Apit_Perceptron
         {
             // Initialize weights randomly between -1 and 1
             weights = new double[numInputs];
+
             var rnd = new Random();
             for (int i = 0; i < numInputs; i++)
             {
-                weights[i] = rnd.NextDouble() * 2 - 1;
+                weights[i] = 0; //rnd.NextDouble() * 2 - 1
             }
 
             // Initialize bias to 0
@@ -29,16 +30,23 @@ namespace Apit_Perceptron
             this.learningRate = learningRate;
         }
         
-        public int Activation(double[] inputs)
+        public double Activation(double[] inputs)
         {
             double weightedSum = 0;
+            
             for (int i = 0; i < weights.Length; i++)
             {
                 weightedSum += weights[i] * inputs[i];
             }
-            weightedSum += bias;
             
-            return weightedSum >= 0 ? 1 : 0;
+            weightedSum += bias;
+
+            return Sigmoid(weightedSum) >= 0.5 ? 1 : 0;
+        }
+        
+        public double Sigmoid(double x)
+        {
+            return 1 / ( 1 + Math.Exp(-x));
         }
 
         public void Train(double[][] inputs, int[] targets, int numEpochs)
@@ -49,10 +57,12 @@ namespace Apit_Perceptron
                 {
                     double prediction = Activation(inputs[i]);
                     double error = targets[i] - prediction;
+                    
                     for (int j = 0; j < weights.Length; j++)
                     {
                         weights[j] += learningRate * error * inputs[i][j];
                     }
+                    
                     bias += learningRate * error;
                 }
             }

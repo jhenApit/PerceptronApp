@@ -11,9 +11,6 @@ namespace Apit_Perceptron
 
         private void btnLearn_Click(object sender, EventArgs e)
         {
-            //get inputs from user
-            input1 = Convert.ToInt32(tbIn1.Text);
-            input2 = Convert.ToInt32(tbIn2.Text);
             numEpochs = Convert.ToInt32(tbEpoch.Text);
 
             //application of perceptron codes
@@ -26,7 +23,7 @@ namespace Apit_Perceptron
                 new double[] { 1, 1 }
             };
             //set target
-            int[] targets = new int[] { 1, 0, 0, 1 };
+            int[] targets = new int[] { 1, 0, 0, 0 };
 
             //train perceptron
             perceptron.Train(inputs, targets, numEpochs);
@@ -34,9 +31,17 @@ namespace Apit_Perceptron
 
         private void button1_Click(object sender, EventArgs e)
         {
+            input1 = Convert.ToInt32(tbIn1.Text);
+            input2 = Convert.ToInt32(tbIn2.Text);
+
             string output = perceptron.Activation(new double[] { input1, input2 }).ToString();
-            
+
             lblOutput.Text = output;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
