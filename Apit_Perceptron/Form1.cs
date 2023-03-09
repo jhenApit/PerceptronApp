@@ -4,6 +4,7 @@ namespace Apit_Perceptron
     {
         Perceptron perceptron;
         int input1, input2, numEpochs;
+
         public Form1()
         {
             InitializeComponent();
@@ -15,6 +16,7 @@ namespace Apit_Perceptron
 
             //application of perceptron codes
             perceptron = new Perceptron(numInputs: 2);
+
             double[][] inputs = new double[][]
             {
                 new double[] { 0, 0 },
@@ -22,6 +24,7 @@ namespace Apit_Perceptron
                 new double[] { 0, 1 },
                 new double[] { 1, 1 }
             };
+
             //set target
             int[] targets = new int[] { 1, 0, 0, 0 };
 
@@ -41,7 +44,10 @@ namespace Apit_Perceptron
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            tbIn1.Clear();
+            tbIn2.Clear();
+            tbEpoch.Clear();
+            lblOutput.Text = "";
         }
     }
 }

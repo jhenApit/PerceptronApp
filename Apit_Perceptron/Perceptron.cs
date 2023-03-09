@@ -12,7 +12,7 @@ namespace Apit_Perceptron
         private double bias;
         private double learningRate;
         
-        public Perceptron(int numInputs, double learningRate = 0.1)
+        public Perceptron(int numInputs, double learningRate = 0.5)
         {
             // Initialize weights randomly between -1 and 1
             weights = new double[numInputs];
@@ -20,7 +20,7 @@ namespace Apit_Perceptron
             var rnd = new Random();
             for (int i = 0; i < numInputs; i++)
             {
-                weights[i] = 0; //rnd.NextDouble() * 2 - 1
+                weights[i] = rnd.NextDouble() * 2 - 1;
             }
 
             // Initialize bias to 0

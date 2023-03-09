@@ -40,13 +40,15 @@
             button1 = new Button();
             label4 = new Label();
             lblOutput = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Title
             // 
             Title.AutoSize = true;
             Title.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            Title.Location = new Point(15, 9);
+            Title.Location = new Point(10, 18);
             Title.Name = "Title";
             Title.Size = new Size(377, 38);
             Title.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(12, 306);
+            btnClear.Location = new Point(265, 306);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(119, 45);
             btnClear.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(61, 190);
+            label1.Location = new Point(56, 84);
             label1.Name = "label1";
             label1.Size = new Size(139, 20);
             label1.TabIndex = 2;
@@ -73,24 +75,24 @@
             // 
             // tbEpoch
             // 
-            tbEpoch.Location = new Point(206, 187);
+            tbEpoch.Location = new Point(203, 81);
             tbEpoch.Name = "tbEpoch";
             tbEpoch.Size = new Size(119, 27);
             tbEpoch.TabIndex = 3;
             // 
             // btnLearn
             // 
-            btnLearn.Location = new Point(137, 306);
+            btnLearn.Location = new Point(15, 306);
             btnLearn.Name = "btnLearn";
             btnLearn.Size = new Size(119, 45);
             btnLearn.TabIndex = 4;
-            btnLearn.Text = "Learn";
+            btnLearn.Text = "Train";
             btnLearn.UseVisualStyleBackColor = true;
             btnLearn.Click += btnLearn_Click;
             // 
             // tbIn2
             // 
-            tbIn2.Location = new Point(206, 129);
+            tbIn2.Location = new Point(203, 171);
             tbIn2.Name = "tbIn2";
             tbIn2.Size = new Size(119, 27);
             tbIn2.TabIndex = 6;
@@ -98,7 +100,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(61, 132);
+            label2.Location = new Point(56, 176);
             label2.Name = "label2";
             label2.Size = new Size(62, 20);
             label2.TabIndex = 5;
@@ -106,7 +108,7 @@
             // 
             // tbIn1
             // 
-            tbIn1.Location = new Point(206, 70);
+            tbIn1.Location = new Point(203, 126);
             tbIn1.Name = "tbIn1";
             tbIn1.Size = new Size(119, 27);
             tbIn1.TabIndex = 8;
@@ -114,7 +116,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(61, 73);
+            label3.Location = new Point(56, 129);
             label3.Name = "label3";
             label3.Size = new Size(62, 20);
             label3.TabIndex = 7;
@@ -122,7 +124,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(262, 306);
+            button1.Location = new Point(140, 306);
             button1.Name = "button1";
             button1.Size = new Size(119, 45);
             button1.TabIndex = 9;
@@ -133,7 +135,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(61, 250);
+            label4.Location = new Point(56, 254);
             label4.Name = "label4";
             label4.Size = new Size(71, 20);
             label4.TabIndex = 10;
@@ -142,16 +144,26 @@
             // lblOutput
             // 
             lblOutput.AutoSize = true;
-            lblOutput.Location = new Point(281, 245);
+            lblOutput.Location = new Point(260, 254);
             lblOutput.Name = "lblOutput";
             lblOutput.Size = new Size(0, 20);
             lblOutput.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Black;
+            pictureBox1.Location = new Point(56, 228);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(266, 3);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(396, 363);
+            Controls.Add(pictureBox1);
             Controls.Add(lblOutput);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -166,6 +178,7 @@
             Controls.Add(Title);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,5 +197,6 @@
         private Button button1;
         private Label label4;
         private Label lblOutput;
+        private PictureBox pictureBox1;
     }
 }
